@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		2424ECEE2AAC70DF006417EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ECED2AAC70DF006417EB /* AppDelegate.swift */; };
 		2424ECF02AAC70DF006417EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ECEF2AAC70DF006417EB /* SceneDelegate.swift */; };
-		2424ECF22AAC70DF006417EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ECF12AAC70DF006417EB /* ViewController.swift */; };
 		2424ECF72AAC70E0006417EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2424ECF62AAC70E0006417EB /* Assets.xcassets */; };
 		2424ECFA2AAC70E0006417EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2424ECF82AAC70E0006417EB /* LaunchScreen.storyboard */; };
+		2424ED062AAC7C5F006417EB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ED052AAC7C5F006417EB /* MainTabBarController.swift */; };
+		2424ED082AAC7ECA006417EB /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ED072AAC7ECA006417EB /* TagViewController.swift */; };
+		2424ED0B2AAC814A006417EB /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ED0A2AAC814A006417EB /* UILabel + Extensions.swift */; };
+		2424ED0E2AAC8360006417EB /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ED0D2AAC8360006417EB /* UIStackView + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2424ECEA2AAC70DF006417EB /* LocaPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocaPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2424ECED2AAC70DF006417EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2424ECEF2AAC70DF006417EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2424ECF12AAC70DF006417EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2424ECF62AAC70E0006417EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2424ECF92AAC70E0006417EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2424ECFB2AAC70E0006417EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2424ED052AAC7C5F006417EB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		2424ED072AAC7ECA006417EB /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		2424ED0A2AAC814A006417EB /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		2424ED0D2AAC8360006417EB /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				2424ED012AAC717E006417EB /* Application */,
-				2424ED042AAC739D006417EB /* Views */,
+				2424ED092AAC7F5D006417EB /* TabBar */,
 				2424ED022AAC7189006417EB /* Controllers */,
+				2424ED042AAC739D006417EB /* Views */,
+				2424ED0C2AAC8161006417EB /* Extensions */,
 				2424ED032AAC719B006417EB /* Resources */,
 			);
 			path = LocaPlace;
@@ -74,7 +82,7 @@
 		2424ED022AAC7189006417EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2424ECF12AAC70DF006417EB /* ViewController.swift */,
+				2424ED072AAC7ECA006417EB /* TagViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -94,6 +102,23 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2424ED092AAC7F5D006417EB /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2424ED052AAC7C5F006417EB /* MainTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		2424ED0C2AAC8161006417EB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2424ED0A2AAC814A006417EB /* UILabel + Extensions.swift */,
+				2424ED0D2AAC8360006417EB /* UIStackView + Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,9 +191,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2424ECF22AAC70DF006417EB /* ViewController.swift in Sources */,
+				2424ED0B2AAC814A006417EB /* UILabel + Extensions.swift in Sources */,
+				2424ED0E2AAC8360006417EB /* UIStackView + Extensions.swift in Sources */,
 				2424ECEE2AAC70DF006417EB /* AppDelegate.swift in Sources */,
+				2424ED082AAC7ECA006417EB /* TagViewController.swift in Sources */,
 				2424ECF02AAC70DF006417EB /* SceneDelegate.swift in Sources */,
+				2424ED062AAC7C5F006417EB /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

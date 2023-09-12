@@ -15,6 +15,7 @@
 		2424ED082AAC7ECA006417EB /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ED072AAC7ECA006417EB /* TagViewController.swift */; };
 		2424ED0B2AAC814A006417EB /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ED0A2AAC814A006417EB /* UILabel + Extensions.swift */; };
 		2424ED0E2AAC8360006417EB /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ED0D2AAC8360006417EB /* UIStackView + Extensions.swift */; };
+		2424ED112AAC9F4C006417EB /* SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424ED102AAC9F4C006417EB /* SimpleAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2424ED072AAC7ECA006417EB /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		2424ED0A2AAC814A006417EB /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		2424ED0D2AAC8360006417EB /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		2424ED102AAC9F4C006417EB /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				2424ED012AAC717E006417EB /* Application */,
+				2424ED0F2AAC9F06006417EB /* Alerts */,
 				2424ED092AAC7F5D006417EB /* TabBar */,
 				2424ED022AAC7189006417EB /* Controllers */,
 				2424ED042AAC739D006417EB /* Views */,
@@ -119,6 +122,14 @@
 				2424ED0D2AAC8360006417EB /* UIStackView + Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2424ED0F2AAC9F06006417EB /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				2424ED102AAC9F4C006417EB /* SimpleAlert.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 				2424ED0E2AAC8360006417EB /* UIStackView + Extensions.swift in Sources */,
 				2424ECEE2AAC70DF006417EB /* AppDelegate.swift in Sources */,
 				2424ED082AAC7ECA006417EB /* TagViewController.swift in Sources */,
+				2424ED112AAC9F4C006417EB /* SimpleAlert.swift in Sources */,
 				2424ECF02AAC70DF006417EB /* SceneDelegate.swift in Sources */,
 				2424ED062AAC7C5F006417EB /* MainTabBarController.swift in Sources */,
 			);
@@ -338,6 +350,7 @@
 				DEVELOPMENT_TEAM = UJRW24XH5L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocaPlace/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS coordinates for your location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -368,6 +381,7 @@
 				DEVELOPMENT_TEAM = UJRW24XH5L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocaPlace/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS coordinates for your location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

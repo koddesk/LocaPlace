@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import CoreLocation
 
 class TagViewController: UIViewController {
     
+    // MARK: - UI
     private let messageLabel = UILabel(text: "MessageLabel")
     private let latitudeNameLabel = UILabel(text: "Latitude:")
     private let latitudeLabel = UILabel(text: "Latitude goes here")
@@ -39,11 +41,34 @@ class TagViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Properties
+    let locationManager = CLLocationManager()
+    var location: CLLocation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setConstraints()
+        updateLabels()
+    }
+    
+    // MARK: - Helper Methods
+    func updateLabels() {
+        if let location = location {
+            latitudeLabel.text = String(format: "%.8f",
+                                        location.coordinate.latitude)
+            longitudeLabel.text = String(format: "%.8f",
+                                         location.coordinate.longitude)
+            tagButton.isHidden = false
+            messageLabel.text = ""
+          } else {
+            latitudeLabel.text = ""
+            longitudeLabel.text = ""
+            addressLabel.text = ""
+            tagButton.isHidden = true
+            messageLabel.text = "Tap 'Get My Location' to Start"
+          }
     }
     
     @objc private func tagButtonTapped() {
@@ -51,10 +76,21 @@ class TagViewController: UIViewController {
     }
     
     @objc private func getButtonTapped() {
-        print(#function)
+        
+        let authStatus = locationManager.authorizationStatus
+        if authStatus == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
+        if authStatus == .denied || authStatus == .restricted {
+            showLocationServicesDeniedAlert("Location Services Disabled",
+                                            message: "Please enable location services for this app in Settings.")
+        }
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
     }
 }
-
 
 // MARK: - Setup View and Constraints
 
@@ -107,5 +143,22 @@ extension TagViewController {
             getButton.heightAnchor.constraint(equalToConstant: 40),
             getButton.widthAnchor.constraint(equalToConstant: 140),
         ])
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension TagViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("*** didFailWithError \(error.localizedDescription)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let newLocation = locations.last {
+            print("*** didUpdateLocations \(newLocation)")
+            location = newLocation
+            updateLabels()
+        }
     }
 }
